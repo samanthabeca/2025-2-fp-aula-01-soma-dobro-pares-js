@@ -8,7 +8,10 @@
  * @param {Array} numeros vetor com os números desejados
  */
 function somaDobroNumerosParesFuncional(numeros){
-    // TODO: Insira seu código funcional aqui
+    return numeros
+        .filter( n => n % 2 === 0 )
+        .map( n => n * 2 )
+        .reduce( ( sum, n ) => sum + n, 0); //Retorna a soma realizada de forma funcional
 }
 
 /**
@@ -17,7 +20,13 @@ function somaDobroNumerosParesFuncional(numeros){
  * @param {Array} numeros vetor com os números desejados
  */
 function somaDobroNumerosParesProcedural(numeros){
-    // TODO: Insira seu código estruturado aqui   
+    let somaDobroPares = 0;
+    for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 === 0) { // Verifica se o número é par
+            somaDobroPares += numeros[i] * 2; // Soma o dobro do número par e o acumula na variável somaDobroPares
+        }
+    }
+    return somaDobroPares; //Retorna o soma realizada de forma estruturada
 }
 
 export { somaDobroNumerosParesFuncional, somaDobroNumerosParesProcedural };
